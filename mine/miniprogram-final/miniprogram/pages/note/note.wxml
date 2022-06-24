@@ -1,0 +1,51 @@
+<view class="h1">待办事项列表</view>
+<view class="hr"></view>
+<!-- 头部区域开始 -->
+<view class="todo-header">
+    <button type="primary" bindtap="formAdd">添加新事项</button></view>
+    <view>
+    <form wx:if="{{form}}"  bindsubmit="formSubmit" bindreset="formReset">
+    <view class="section">
+    <view class="section__title"></view>
+    <input name="input" placeholder="输入事件名称" />
+    </view>
+    <view class="section">
+    <view class="section__title">时间选择器</view>
+    <picker name="time" mode="time" value="{{time}}" start="00：00" end="24:00" bindchange="bindTimeChange">
+  <view class="picker">
+    当前选择: {{time}}
+  </view>
+    </picker>
+    </view>
+    <view class="section">
+    <view class="section__title">日期选择器</view>
+    <picker  name="date" mode="date" value="{{date}}" start="2022-06-01" end="2050-12-31" bindchange="bindDateChange">
+    <view class="picker">
+    当前选择: {{date}}
+    </view>
+    </picker>
+    </view>
+
+<view class="btn-area">
+  <button formType="submit">Submit</button>
+  <button formType="reset">Reset</button>
+</view>
+    </form>
+</view>
+<!-- 头部区域结束 -->
+<!-- 待办事项列表开始 -->
+<view>
+    <!-- 不存在待办事项开始 -->
+    <text wx:if="{{todos.length==0}}">提示：当前没有待办事项</text>
+    <!-- 不存在待办事项结束 -->
+    <!-- 单一事项列表 -->
+    <view class="todo-list-item" wx:for="{{todos}}" wx:key="*this">
+        <text>{{index+1}}、{{item[0]}}
+        {{item[1]}}   {{item[2]}} </text>   
+        
+        <button type="warn" size="mini" bindtap="valDel" data-index="{{index}}">已完成</button>
+    </view>
+    <!-- 单一事项结束 -->
+</view>
+<!-- 待办事项列表结束 -->
+

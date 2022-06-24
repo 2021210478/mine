@@ -1,0 +1,36 @@
+.h1{
+    font-size:24px;
+    margin-bottom:15rpx;
+  }
+  .hr{
+    height:0;
+    margin:10rpx 0;
+    border-bottom: 1px solid #ccc;
+  }
+  .todo-header{
+    display: flex;
+    align-items: center;
+  }
+  .todo-header input{
+    flex: 2;
+    border:1px solid #ccc;
+    padding:15rpx 10rpx;
+    margin-right: 10rpx;
+  }
+  .todo-header button{
+    flex: 1;
+  }
+  .todo-list-item{
+    margin-top: 15rpx;
+  }
+  .todo-list-item{
+    display: flex;
+    align-items: center;
+  }
+  .todo-list-item text{
+    font-size:18px;
+    flex: 3;
+  }
+  .todo-list-item button{
+    flex: 1;
+  }
